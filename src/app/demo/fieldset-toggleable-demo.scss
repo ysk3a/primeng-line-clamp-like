@@ -1,0 +1,51 @@
+// .my-card {
+//   p-fieldset.field-set {
+//     position: relative;
+//     &.fieldset-clamp {
+//       position: absolute;
+//       background-color: yellow;
+//     }
+//     &.fieldset-normal {
+//       position: relative;
+//       background-color: green;
+//     }
+//   }
+// }
+// .my-card {
+//   background-color: green;
+//   position: relative;
+//   p-fieldset.field-set {
+//     position: relative;
+//     ::ng-deep .fieldSet-clamp.p-fieldset-expanded {
+//       position: absolute;
+//       background-color: yellow;
+//     }
+//   }
+// }
+
+.my-card {
+  background-color: lightblue;
+  position: relative;
+  p-fieldset.field-set:has(.fieldSet-clamp.p-fieldset-expanded) {
+    position: absolute;
+    background-color: yellow;
+    z-index: 1000;
+  }
+}
+.my-card2 {
+  background-color: transparent;
+  position: relative;
+  min-height: 66px;
+  p-fieldset.field-set2 {
+    position: relative;
+    width: 100%;
+    ::ng-deep .fieldSet-clamp.p-fieldset-expanded {
+      position: absolute;
+      z-index: 1000;
+    }
+    // .p-fieldset-expanded {
+    //   position: absolute;
+    //   z-index: 1000;
+    // }
+  }
+}
